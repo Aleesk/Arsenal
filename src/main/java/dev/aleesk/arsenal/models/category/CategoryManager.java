@@ -50,7 +50,7 @@ public class CategoryManager {
         category.setDescription(Arrays.asList(
                 "&8Category",
                 "",
-                "&This category offers a selection",
+                "&7This category offers a selection",
                 "&7of unique kits",
                 "",
                 "&eClick to view!"));
