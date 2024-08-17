@@ -1,0 +1,24 @@
+# SERVER STORE
+store: "store.server.net"
+
+# CONFIGURATION GLOBAL KIT
+kit:
+  starter:
+    enable: false
+    kit: "none"
+    one_time: true
+  clear_inventory: false
+  available_yes: "&anow ✔"
+  available_no: "%cooldown_left% ✖"
+
+# KIT GUI SETTINGS
+kit_gui:
+  title: "Kit Selector"
+  rows: 6
+  default_category:
+  decorations:
+    enable: true
+    glow: true
+    enchant: true
+    slot-items: {}
+

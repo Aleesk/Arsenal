@@ -1,0 +1,5 @@
+main: dev.aleesk.arsenal.Arsenal
+name: ${project.artifactId}
+version: ${project.version}
+author: Aleesk
+api-version: 1.13

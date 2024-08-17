@@ -1,0 +1,8 @@
+kit:
+  equip: "&6[&eArsenal&6] &aAdded %kit% kit items to your inventory."
+  starter: "&6[&eArsenal&6] &aStarter kit received: &f%kit%"
+  cooldown: "&6[&eArsenal&6] &cYour still on %kit% kit cooldown for another &c&l%cooldown_left%&c."
+  no_permission: "&6[&eArsenal&6] &cYou can purchase this kit in &b&n%store%&c."
+
+category:
+  no_permission: "&6[&eArsenal&6] &cYou cannot access this kit category."
