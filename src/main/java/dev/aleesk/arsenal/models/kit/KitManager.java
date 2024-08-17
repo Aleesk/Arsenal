@@ -76,9 +76,9 @@ public class KitManager {
         kit.setLoreDescription(Arrays.asList(
                 "&8Kit",
                 "",
-                "&7This kit is designed to offer a",
-                "&7significant tactical advantage in",
-                "&7combat situations."));
+                "&7This kit is designed to offer",
+                "&7you items that will contribute",
+                "&7to a better performance."));
         kit.setLoreUnlocked(Arrays.asList(
                 "",
                 "&7Cooldown: &6%cooldown%",
