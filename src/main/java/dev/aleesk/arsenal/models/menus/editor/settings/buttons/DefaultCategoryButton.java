@@ -24,20 +24,20 @@ public class DefaultCategoryButton extends Button {
     @Override
     public ItemStack getButtonItem(Player player) {
         String categoryName = configFile.getString("kit_gui.default_category");
-        String displayName = null;
+        String name = null;
 
         Map<String, Category> categories = plugin.getCategoryManager().getCategories();
         if (categories.containsKey(categoryName)) {
             Category category = categories.get(categoryName);
-            displayName = category.getDisplayName();
+            name = category.getName();
         }
 
-        return new ItemBuilder(XMaterial.CHEST_MINECART.parseMaterial())
+        return new ItemBuilder(name != null ? XMaterial.CHEST_MINECART.parseMaterial() : XMaterial.MINECART.parseMaterial())
                 .setName("&aDefault Category")
                 .setLore("&7Define which default category you want",
                         "&7to display when opening the kits GUI.",
                         "",
-                        "&7Current: &r" + (displayName == null ? "&cNone" : displayName),
+                        "&7Current: &r" + (name == null ? "&cNone" : name),
                         "",
                         "&eClick to change!").build();
     }

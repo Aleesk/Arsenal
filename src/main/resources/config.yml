@@ -9,7 +9,7 @@ kit:
     one_time: true
   clear_inventory: false
   available_yes: "&anow ✔"
-  available_no: "%cooldown_left% ✖"
+  available_no: "&c%cooldown_left% ✖"
 
 # KIT GUI SETTINGS
 kit_gui:

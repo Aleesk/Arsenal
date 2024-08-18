@@ -1,6 +1,5 @@
 package dev.aleesk.arsenal.utilities;
 
-
 import org.apache.commons.lang.time.DurationFormatUtils;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -128,9 +127,5 @@ public final class JavaUtil {
             random++;
         }
         return random;
-    }
-
-    public static boolean getChance(double minimalChance) {
-        return (ThreadLocalRandom.current().nextDouble(99.0D) + 1.0D >= 100.0D - minimalChance);
     }
 }

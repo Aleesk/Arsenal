@@ -67,7 +67,7 @@ public class KitInfoButton extends Button {
         }
         return (new ItemBuilder(this.kit.getMaterial()))
                 .setData(this.kit.getData())
-                .setName("&aKit: &r" +this.kit.getDisplayName())
+                .setName("&aKit: &r" + this.kit.getName())
                 .setEnchanted(this.kit.isGlow(), this.kit.isEnchant())
                 .setSkullOwner(this.kit.getSkullOwner())
                 .setLore(lore)

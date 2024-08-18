@@ -8,6 +8,7 @@ import dev.aleesk.arsenal.user.User;
 import dev.aleesk.arsenal.utilities.BukkitUtil;
 import dev.aleesk.arsenal.utilities.ChatUtil;
 import dev.aleesk.arsenal.utilities.JavaUtil;
+import dev.aleesk.arsenal.utilities.TimeUtil;
 import dev.aleesk.arsenal.utilities.file.FileConfig;
 import lombok.Getter;
 import org.bukkit.Material;
@@ -139,7 +140,7 @@ public class KitManager {
 
             for (String line : kit.getLoreUnlocked()) {
                 lore.add(line
-                        .replace("%cooldown%", JavaUtil.formatDurationInt(kit.getCooldown()))
+                        .replace("%cooldown%", TimeUtil.getTimeFormatted(kit.getCooldown()))
                         .replace("%available%", cooldownRemaining != null
                                 ? configFile.getString("kit.available_no").replace("%cooldown_left%", cooldownRemaining)
                                 : configFile.getString("kit.available_yes")));

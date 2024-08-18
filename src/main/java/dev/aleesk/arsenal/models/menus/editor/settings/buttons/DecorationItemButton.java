@@ -32,9 +32,9 @@ public class DecorationItemButton extends Button {
         return new ItemBuilder(material)
                 .setData(data)
                 .setName(displayName)
+                .setEnchanted(configFile.getBoolean("kit_gui.decorations.glow"), configFile.getBoolean("kit_gui.decorations.enchant"))
                 .setSkullOwner(skullOwner)
                 .setLore(lore)
-                .setEnchanted(configFile.getBoolean(path + "glow"), configFile.getBoolean(path + "enchant"))
                 .build();
     }
 }

@@ -7,6 +7,7 @@ import dev.aleesk.arsenal.models.kit.Kit;
 import dev.aleesk.arsenal.models.prompt.KitEditStringPrompt;
 import dev.aleesk.arsenal.utilities.ChatUtil;
 import dev.aleesk.arsenal.utilities.JavaUtil;
+import dev.aleesk.arsenal.utilities.TimeUtil;
 import dev.aleesk.arsenal.utilities.item.ItemBuilder;
 import dev.aleesk.arsenal.utilities.menu.Button;
 import org.bukkit.entity.Player;
@@ -15,7 +16,6 @@ import org.bukkit.inventory.ItemStack;
 
 public class KitCooldownButton extends Button {
     private final Kit kit;
-
     private final Arsenal plugin;
 
     public KitCooldownButton(Kit kit, Arsenal plugin) {
@@ -31,7 +31,7 @@ public class KitCooldownButton extends Button {
                                 "&7time between uses with a simple and",
                                 "&7easy-to-follow format.",
                                 "",
-                                "&7Cooldown: &6"+ JavaUtil.formatDurationInt(this.kit.getCooldown()),
+                                "&7Cooldown: &6"+ TimeUtil.getTimeFormatted(this.kit.getCooldown()),
                                 "",
                                 "&eClick to edit!").build();
     }
@@ -42,13 +42,13 @@ public class KitCooldownButton extends Button {
         ChatUtil.sendMessage(player, "");
         ChatUtil.sendMessage(player, "&eExample: &c24d 12h 30m 15s");
         playSuccess(player);
-        String oldCooldown = JavaUtil.formatDurationInt(kit.getCooldown());
+        int oldCooldown = kit.getCooldown();
         new KitEditStringPrompt(kit, this.plugin, (string) -> {
             this.kit.setCooldown(JavaUtil.formatInt(string));
             this.kit.save();
             XSound.ENTITY_VILLAGER_YES.play(player);
-            ChatUtil.sendMessage(player, "&eKit cooldown has been changed from '&r" + oldCooldown + "&e' to '&r" +
-                    JavaUtil.formatDurationInt(kit.getCooldown()) + "&e'.");
+            ChatUtil.sendMessage(player, "&eKit cooldown has been changed from '&r" + TimeUtil.getTimeFormatted(oldCooldown) + "&e' to '&r" +
+                    TimeUtil.getTimeFormatted(kit.getCooldown()) + "&e'.");
         }).startPrompt(player);
     }
 }
