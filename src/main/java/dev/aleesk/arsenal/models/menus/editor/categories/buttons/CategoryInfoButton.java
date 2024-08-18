@@ -48,7 +48,7 @@ public class CategoryInfoButton extends Button {
         }
         return (new ItemBuilder(this.category.getMaterial()))
                 .setData(this.category.getData())
-                .setName("&aCategory: &r" +this.category.getDisplayName())
+                .setName("&aCategory: &r" +this.category.getName())
                 .setEnchanted(this.category.isGlow(), this.category.isEnchant())
                 .setSkullOwner(this.category.getSkullOwner())
                 .setLore(lore)
