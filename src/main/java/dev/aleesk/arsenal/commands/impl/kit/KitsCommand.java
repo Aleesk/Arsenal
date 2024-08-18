@@ -20,14 +20,10 @@ public class KitsCommand extends BaseCommand {
 
     @Command(name = "kit", aliases = {"kits", "gkit", "gkits"})
     public void onCommand(CommandArgs command) {
-        CommandSender sender = command.getSender();
         String[] args = command.getArgs();
         Player player = command.getPlayer();
 
-        if (!command.isPlayer()) {
-            ChatUtil.sendMessage(sender, "&cThis command in only executable in game.");
-
-        } else if (args.length < 1){
+        if (args.length < 1){
             Category category = plugin.getCategoryManager().getCategory();
             if (category == null) {
                 ChatUtil.sendMessage(player, "&cNo default category found. configure this in settings menu.");
